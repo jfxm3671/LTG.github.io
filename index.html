@@ -85,9 +85,9 @@
         }
         /* Style for the actual logo image within the .logo div */
         .logo img {
-            height: 40px; /* Adjust as needed */
+            height: 80px; /* Increased logo size */
             width: auto;
-            vertical-align: middle; /* Aligns image nicely with text if any */
+            vertical-align: middle;
         }
 
 
@@ -105,15 +105,17 @@
 
         /* --- HERO SECTION (The Foundation) --- */
         .hero {
-        height: 100vh;
-        background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('homepage-bg.jpg'); /* Use the new, working version */
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: var(--primary-dark-text); 
-    }
+            height: 130vh;
+            /* Using your custom image for the homepage background with overlay */
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('homepage-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--primary-dark-text); /* Ensure text is dark on light background */
+        }
+
         .hero-content h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
@@ -143,7 +145,7 @@
             box-shadow: 0 10px 20px -10px rgba(0, 123, 255, 0.5);
         }
 
-        /* --- SPV SECTION (The Spark) - This will still be a bit darker for contrast, but NOT black. --- */
+        /* --- SPV  (The Spark) - This will still be a bit darker for contrast, but NOT black. --- */
         .spv-section {
             background-color: var(--secondary-light); /* A light gray background */
             position: relative;
@@ -307,7 +309,63 @@
         }
         footer p {
             color: var(--secondary-text); /* Lighter gray text in footer */
+        }/* Styles for Footer CTA */
+    .footer-cta h3 {
+        color: var(--primary-light); /* White heading */
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    .footer-cta p {
+        color: var(--secondary-text); /* Lighter text for description */
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+    }
+    .email-form {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+        flex-wrap: wrap; /* Allows stacking on small screens */
+    }
+    .email-form input[type="email"] {
+        padding: 12px 15px;
+        border: 1px solid var(--border-light);
+        background-color: var(--primary-light); /* White input field */
+        color: var(--primary-dark-text);
+        border-radius: 4px;
+        flex-grow: 1; /* Allows input to take up available space */
+        min-width: 200px; /* Ensures input doesn't get too small */
+    }
+    .email-form input[type="email"]::placeholder {
+        color: var(--secondary-text);
+    }
+    .btn-subscribe {
+        padding: 12px 25px;
+        background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+        border: none;
+        color: var(--primary-light);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-subscribe:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px -5px rgba(0, 123, 255, 0.4);
+    }
+    /* Responsive adjustments for the email form */
+    @media (max-width: 480px) {
+        .email-form {
+            flex-direction: column;
+            align-items: stretch;
         }
+        .email-form input, .email-form button {
+            width: 100%;
+        }
+    }
 
 
         /* --- RESPONSIVE --- */
@@ -342,29 +400,28 @@
     <section id="spvs" class="section-padding spv-section">
         <div class="container">
             <div class="section-header">
-                <h2>Operational <span class="gradient-text">Vehicles</span> (SPVs)</h2>
+                <h2>Operational <span class="gradient-text">Vehicles</span> (SPVs+)</h2>
                 <p>LTG acts as the governance layer for specialized operating entities driving innovation.</p>
             </div>
 
             <div class="spv-grid">
                 <div class="spv-card highlight">
                     <h3>P3 Palmetto Collaborative LLC</h3>
-                    <p>An LTG operating brand focused on energetic partnerships, innovation and collaborative infrastructure development. Driving the future with a "spark" of innovation.</p>
+                    <p>An LTG operating brand focused on energetic partnerships and collaborative infrastructure development. Driving the future with a "spark" of innovation.</p>
                     <a href="https://www.p3pc.com" target="_blank" class="spv-link">Visit p3pc.com →</a>
                 </div>
 
                 <div class="spv-card">
                     <h3>Rutledge Atelier</h3>
-                    <p>An LTG partnership focussed on creativity and colaboration, traditional and innovative design and imagery with emerging tech. Concierge design now!</p>
+		    <p>A LTG partnership focussed on creativity throuugh traditional and innovative design. Concierge design now!</p>
+                    <p>Reserved for upcoming creative innovation and imagery in emerging tech sectors. Ready for deployment.</p>  
 		    <a href="https://www.rutledgeatelier.com" target="_blank" class="spv-link">Visit rutledgeatelier.com →</a>
                 </div>
 
                  <div class="spv-card">
                     <h3>[Future Governance SPV]</h3>
-                    <p>Awaiting deployment for new initiatives in responsible orchestration and policy advocacy.</p>
-                </div>
-            </div>
-        </div>
+		    <p>A LTG orchestra of things paramount to ethical and innovative growth.</p> 
+		</div>
     </section>
 
     <section id="focus" class="section-padding">
@@ -394,43 +451,54 @@
         </div>
     </section>
 
-   <section id="mavens" class="section-padding mavens-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>The <span class="gradient-text">Mavens</span></h2>
-            <p>Responsible leaders in tech and politics we watch, follow, and consider benchmarks for governance.</p>
-        </div>
+    <section id="mavens" class="section-padding mavens-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The <span class="gradient-text">Mavens</span></h2>
+                <p>Responsible leaders we follow: Highlighting The Nobel Prize Winners 2025 for Physics.</p>
+                <p style="margin-top: 10px;"><a href="https://www.nobelprize.org/prizes/physics/2025/summary/" target="_blank">View Nobel Prize in Physics 2025 Information →</a></p>
+            </div>
 
-        <div class="mavens-grid">
-            <div class="maven-card">
-                <div class="maven-img" style="background-image: url('maven1.jpg');"></div>
-                <h4>[Leader Name 1]</h4>
-                <p>Tech Innovator & Policy Advocate. Known for work in AI Ethics.</p>
-            </div>
-             <div class="maven-card">
-                <div class="maven-img" style="background-image: url('maven2.jpg');"></div>
-                <h4>[Leader Name 2]</h4>
-                <p>Political Strategist focused on infrastructure and digital orchestration.</p>
-            </div>
-             <div class="maven-card">
-                <div class="maven-img" style="background-image: url('maven3.jpg');"></div>
-                <h4>[Leader Name 3]</h4>
-                <p>Leading Writer on responsible governance frameworks.</p>
+            <div class="mavens-grid">
+                <div class="maven-card">
+                    <div class="maven-img" style="background-image: url('john clarke.jpg');"></div>
+                    <h4>John Clarke</h4>
+                    <p>Pioneering work in quantum devices and superconducting electronics.</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem;"><a href="https://scholar.google.com/scholar?q=John+Clarke+physics+publications" target="_blank">Publications & Research →</a></p>
+                </div>
+                <div class="maven-card">
+                    <div class="maven-img" style="background-image: url('michel devoret.jpg');"></div>
+                    <h4>Michel H. Devoret</h4>
+                    <p>Foundational contributions to superconducting qubits and quantum computing.</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem;"><a href="https://scholar.google.com/scholar?q=Michel+H.+Devoret+physics+publications" target="_blank">Publications & Research →</a></p>
+                </div>
+                <div class="maven-card">
+                    <div class="maven-img" style="background-image: url('john m martinis.jpg');"></div>
+                    <h4>John M. Martinis</h4>
+                    <p>Breakthroughs in building and demonstrating superconducting quantum processors.</p>
+                    <p style="margin-top: 10px; font-size: 0.85rem;"><a href="https://scholar.google.com/scholar?q=John+M.+Martinis+physics+publications" target="_blank">Publications & Research →</a></p>
+                </div>
             </div>
         </div>
-    </div>
-</section>``
+    </section>
 
     <footer id="contact">
         <div class="container">
             <div class="logo" style="margin-bottom: 20px;">
-                <img src="LTG_Logo.jpg" alt="Lucas Taylor Group Logo Footer">
+                <img src="Web_LOGO_5.png" alt="Lucas Taylor Group Logo Footer">
             </div>
             <p>Orchestrating Innovation. Responsible Governance.</p>
-            <p style="margin-top: 30px; font-size: 0.8rem;">&copy; 2025 Lucas Taylor Consulting Group. All rights reserved. <br> P3 Palmetto Collaborative LLC is an operating SPV of LTG.</p>
+	    <div class="footer-cta" style="margin-top: 30px;">
+            <h3>Stay Informed</h3>
+            <p>Get updates on governance, innovation, and our SPVs.</p>
+            <form action="#" method="POST" class="email-form">
+                <input type="email" placeholder="Your Email Address" required>
+                <button type="submit" class="btn-subscribe">Subscribe</button>
+            </form>
+        </div>
+            <p style="margin-top: 30px; font-size: 0.8rem;">&copy; 2012-2025 Lucas Taylor Group. All rights reserved. <br> P3 Palmetto Collaborative LLC is an operating SPV of LTG.</p>
         </div>
     </footer>
 
 </body>
-
 </html>
