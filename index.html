@@ -1,517 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LucasTaylor Group | Governance & Orchestration</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <style>
-        /* --- CORE STYLES --- */
-        :root {
-            --primary-light: #ffffff; /* Clean white background */
-            --secondary-light: #f8f9fa; /* Off-white for sections */
-            --primary-dark-text: #212529; /* Dark text for readability */
-            --secondary-text: #6c757d; /* Lighter gray for secondary text */
-            --accent-blue: #007bff; /* A brighter, professional blue */
-            --accent-purple: #6610f2; /* A complementary vibrant purple */
-            --border-light: #dee2e6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Taylor Consulting Group — James F. Murphy, Fractional Business Development</title>
+<meta name="description" content="Fractional business development for technology, AI, and infrastructure companies. 20+ years, a $50M exit, and a rolodex that opens doors. James F. Murphy, Lucas Taylor Consulting Group.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFF1F0;
+    --ink:#1B2A38;
+    --copper:#B4642D;
+    --steel:#5D7285;
+    --line:#C7CDCA;
+    --white:#FBFCFB;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.reveal{transition:none!important;opacity:1!important;transform:none!important}}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  a{color:var(--copper)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  /* header */
+  header{position:sticky;top:0;background:rgba(239,241,240,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);z-index:10}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+  .mark{font-family:'Archivo',sans-serif;font-weight:800;font-stretch:112%;letter-spacing:.02em;font-size:15px;text-transform:uppercase;color:var(--ink);text-decoration:none}
+  .mark span{color:var(--copper)}
+  nav.links{display:flex;gap:22px}
+  nav.links a{font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--steel)}
+  nav.links a:hover{color:var(--copper)}
+  @media(max-width:720px){nav.links{display:none}}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-light);
-            color: var(--primary-dark-text);
-            line-height: 1.6;
-        }
+  /* hero */
+  .hero{padding:88px 0 64px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:20px}
+  h1{font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:850;font-size:clamp(2.3rem,6vw,4.2rem);line-height:1.03;letter-spacing:-.015em;max-width:16ch}
+  .hero p.lede{margin-top:26px;font-size:1.22rem;max-width:56ch;color:#2c3d4d}
+  .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:15px 26px;border:2px solid var(--ink)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--copper);border-color:var(--copper)}
+  .btn.ghost{color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--copper);color:var(--copper)}
 
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--primary-dark-text);
-        }
+  /* ledger — signature element */
+  .ledger{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:'Archivo',sans-serif;font-stretch:114%;font-weight:800;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.01em;margin-bottom:8px}
+  .sub{color:var(--steel);max-width:60ch;margin-bottom:34px}
+  .ledger-rows{border-top:2px solid var(--ink)}
+  .lrow{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:18px 4px;border-bottom:1px solid var(--line)}
+  .lrow .what{max-width:62ch}
+  .lrow .fig{font-family:'Archivo',sans-serif;font-weight:850;font-stretch:110%;font-size:clamp(1.4rem,3.4vw,2rem);color:var(--copper);white-space:nowrap;font-variant-numeric:tabular-nums}
+  @media(max-width:640px){.lrow{flex-direction:column;gap:4px}.lrow .fig{order:-1}}
 
-        a {
-            text-decoration: none;
-            color: var(--accent-blue);
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: var(--accent-purple);
-        }
+  /* services */
+  .services{padding:64px 0;border-bottom:1px solid var(--line)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
+  @media(max-width:860px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--white);padding:30px 26px}
+  .card h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.02em;text-transform:uppercase;margin-bottom:6px}
+  .card .model{font-family:'Archivo',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+  .card p{font-size:.98rem;color:#31424f}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  /* about */
+  .about{padding:64px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:5fr 7fr;gap:48px}
+  @media(max-width:860px){.about{grid-template-columns:1fr;gap:24px}}
+  .about .roles{border-top:2px solid var(--ink);font-family:'Archivo',sans-serif}
+  .role{display:flex;justify-content:space-between;gap:16px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:.92rem}
+  .role b{font-weight:700}
+  .role span{color:var(--steel);white-space:nowrap}
 
-        .section-padding {
-            padding: 80px 0;
-        }
+  /* ventures + writing */
+  .ventures{padding:64px 0;border-bottom:1px solid var(--line)}
+  .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:8px}
+  @media(max-width:720px){.vgrid{grid-template-columns:1fr}}
+  .venture h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:6px}
+  .venture p{font-size:.98rem;color:#31424f}
+  .venture a{font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
 
-        /* Gradient text effect for emphasis (still works with lighter backgrounds) */
-        .gradient-text {
-            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  /* contact */
+  .contact{padding:76px 0 84px;text-align:center}
+  .contact h2{margin-bottom:14px}
+  .contact p{max-width:52ch;margin:0 auto 30px;color:#2c3d4d}
+  .contact .slots{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--copper);margin-bottom:10px}
 
-        /* --- NAVIGATION --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            position: absolute;
-            width: 100%;
-            z-index: 10;
-            background: rgba(255,255,255,0.8); /* Lighter, semi-transparent nav */
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+  footer{border-top:1px solid var(--line);padding:26px 0;font-family:'Archivo',sans-serif;font-size:12.5px;color:var(--steel);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-            color: var(--primary-dark-text);
-        }
-        /* Style for the actual logo image within the .logo div */
-        .logo img {
-            height: 80px; /* Increased logo size */
-            width: auto;
-            vertical-align: middle;
-        }
-
-
-        .nav-links a {
-            margin-left: 30px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary-dark-text);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        /* --- HERO SECTION (The Foundation) --- */
-        .hero {
-            height: 130vh;
-            /* Using your custom image for the homepage background with overlay */
-            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('homepage-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--primary-dark-text); /* Ensure text is dark on light background */
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            color: var(--secondary-text);
-        }
-
-        .btn-main {
-            padding: 15px 35px;
-            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
-            border: none;
-            color: var(--primary-light); /* White text on colorful button */
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px -10px rgba(0, 123, 255, 0.5);
-        }
-
-        /* --- Structure  (The Spark) - This will still be a bit darker for contrast, but NOT black. --- */
-        .spv-section {
-            background-color: var(--secondary-light); /* A light gray background */
-            position: relative;
-            overflow: hidden;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        /* Removed the dark grid effect, replaced with something subtle */
-        .spv-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                linear-gradient(rgba(248,249,250,0.9), rgba(248,249,250,0.9)),
-                url('https://www.transparenttextures.com/patterns/cubes.png'); /* Light subtle pattern */
-            opacity: 0.1; /* Very subtle */
-            z-index: 0;
-        }
-
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .spv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .spv-card {
-            background: var(--primary-light); /* White card background */
-            border: 1px solid var(--border-light);
-            padding: 40px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            color: var(--primary-dark-text);
-        }
-
-        /* The P3PC Highlight Card styles - still vibrant, but within a lighter scheme */
-        .spv-card.highlight {
-            border: 1px solid var(--accent-blue);
-            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15); /* More prominent shadow */
-        }
-
-        .spv-card.highlight::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 5px;
-            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
-        }
-
-        .spv-card h3 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            color: var(--primary-dark-text);
-        }
-
-        .spv-card p {
-            color: var(--secondary-text);
-        }
-
-        .spv-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-        .spv-link:hover {
-            text-decoration: underline;
-        }
-
-        /* --- FOCUS AREAS --- */
-        .focus-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .focus-item {
-            text-align: left;
-            padding: 30px;
-            border-left: 3px solid var(--accent-blue); /* Blue border accent */
-            background: var(--primary-light);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        .focus-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--accent-blue); /* Blue heading */
-        }
-        .focus-item p {
-            color: var(--secondary-text);
-        }
-
-
-        /* --- THE MAVENS --- */
-        .mavens-section {
-            background-color: var(--secondary-light); /* Light gray background */
-            border-top: 1px solid var(--border-light);
-        }
-
-        .mavens-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .maven-card {
-            text-align: center;
-            background: var(--primary-light);
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .maven-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: #e9ecef; /* Light gray placeholder */
-            margin: 0 auto 20px auto;
-            background-size: cover;
-            background-position: center; /* Center the actual images */
-            border: 3px solid var(--accent-blue);
-        }
-
-        .maven-card h4 {
-            margin-bottom: 10px;
-            color: var(--primary-dark-text);
-        }
-
-        .maven-card p {
-            font-size: 0.9rem;
-            color: var(--secondary-text);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--primary-dark-text); /* Dark footer for contrast */
-            padding: 50px 0;
-            text-align: center;
-            color: var(--primary-light); /* White text on dark footer */
-        }
-        footer .logo {
-            color: var(--primary-light); /* White logo in footer */
-        }
-        footer p {
-            color: var(--secondary-text); /* Lighter gray text in footer */
-        }/* Styles for Footer CTA */
-    .footer-cta h3 {
-        color: var(--primary-light); /* White heading */
-        margin-bottom: 10px;
-        font-size: 1.5rem;
-    }
-    .footer-cta p {
-        color: var(--secondary-text); /* Lighter text for description */
-        margin-bottom: 20px;
-        font-size: 0.95rem;
-    }
-    .email-form {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        max-width: 400px;
-        margin: 0 auto;
-        flex-wrap: wrap; /* Allows stacking on small screens */
-    }
-    .email-form input[type="email"] {
-        padding: 12px 15px;
-        border: 1px solid var(--border-light);
-        background-color: var(--primary-light); /* White input field */
-        color: var(--primary-dark-text);
-        border-radius: 4px;
-        flex-grow: 1; /* Allows input to take up available space */
-        min-width: 200px; /* Ensures input doesn't get too small */
-    }
-    .email-form input[type="email"]::placeholder {
-        color: var(--secondary-text);
-    }
-    .btn-subscribe {
-        padding: 12px 25px;
-        background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
-        border: none;
-        color: var(--primary-light);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn-subscribe:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px -5px rgba(0, 123, 255, 0.4);
-    }
-    /* Responsive adjustments for the email form */
-    @media (max-width: 480px) {
-        .email-form {
-            flex-direction: column;
-            align-items: stretch;
-        }
-        .email-form input, .email-form button {
-            width: 100%;
-        }
-    }
-
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-links { display: none; } /* Simplified mobile view for now */
-        }
-    </style>
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="Web_LOGO_5.png" alt="Lucas Taylor Group Logo">
-        </div>
-        <div class="nav-links">
-            <a href="#Newco">NewCo</a>
-            <a href="#focus">Focus Areas</a>
-            <a href="#mavens">Mavens</a>
-            <a href="#contact">Contact</a>
-        </div>
+<header>
+  <div class="wrap nav">
+    <a class="mark" href="#top">Lucas<span>Taylor</span> Group</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#record">Record</a>
+      <a href="#services">Engagements</a>
+      <a href="#about">About</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </div>
+</header>
 
-    <header class="hero">
-        <div class="container hero-content">
-            <h1>Agile & Responsible <span class="gradient-text">Governance</span></h1>
-            <p>Orchestrating innovation through Special Purpose Vehicles and strategic partnerships in technology and infrastructure.</p>
-            <a href="#spvs"><button class="btn-main">Explore Our Structure</button></a>
-        </div>
-    </header>
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow">James F. Murphy · Fractional Business Development</p>
+    <h1>Pipeline, partnerships, and doors opened. On retainer.</h1>
+    <p class="lede">I'm a business development executive with twenty-plus years and a $50M exit behind me. I embed with technology, AI, and infrastructure companies for 10–20 hours a week — 1099 or corp-to-corp — and do the thing I've always done: find the buyer, build the relationship, close the deal.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:Jmurphy@lucastaylorgroup.com?subject=Fractional%20BD%20inquiry">Start a conversation</a>
+      <a class="btn ghost" href="#record">See the record</a>
+    </div>
+  </section>
 
-    <section id="spvs" class="section-padding spv-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Operational <span class="gradient-text">Vehicles</span> (NewCo+)</h2>
-                <p>LTG acts as the governance layer for specialized operating entities driving innovation.</p>
-            </div>
+  <section class="ledger wrap" id="record">
+    <h2>The ledger</h2>
+    <p class="sub">Numbers first. Everything here happened in-market, with real quotas and real contracts.</p>
+    <div class="ledger-rows">
+      <div class="lrow reveal"><div class="what"><strong>Co-founded Traxi Technologies</strong> — self-funded managed services firm grown from zero to $5M revenue in three years, acquired.</div><div class="fig">$50M exit</div></div>
+      <div class="lrow reveal"><div class="what"><strong>P3 Global Management</strong> — built green-infrastructure compliance initiatives including the country's largest bike share program.</div><div class="fig">+$4.7M / yr</div></div>
+      <div class="lrow reveal"><div class="what"><strong>Major metropolitan transportation authority</strong> — developed and monetized telecom and advertising strategy across public infrastructure.</div><div class="fig">3× capex return</div></div>
+      <div class="lrow reveal"><div class="what"><strong>FileTek</strong> — North America enterprise software sales across banking, government, and automotive verticals.</div><div class="fig">25% YoY</div></div>
+      <div class="lrow reveal"><div class="what"><strong>Team quota attainment</strong> through innovative sales strategy; 200% business-plan growth via a new partner program.</div><div class="fig">180%</div></div>
+      <div class="lrow reveal"><div class="what"><strong>Multi-site data center agreement</strong> — negotiated across real estate, energy, and disaster recovery; $2M strategic annual sales.</div><div class="fig">3.5M sq ft</div></div>
+    </div>
+  </section>
 
-            <div class="spv-grid">
-                <div class="spv-card highlight">
-                    <h3>P3 Palmetto Collaborative LLC</h3>
-                    <p>An LTG operating brand focused on energetic partnerships and collaborative infrastructure development. Driving the future with a "spark" of innovation.</p>
-                    <a href="https://www.p3pc.com" target="_blank" class="spv-link">Visit p3pc.com →</a>
-                </div>
+  <section class="services wrap" id="services">
+    <h2>Three ways to engage</h2>
+    <p class="sub">Every engagement runs through Lucas Taylor Consulting Group — no recruiting fees, no benefits overhead, no ramp.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Fractional BD Lead</h3>
+        <p class="model">Retainer · 10–20 hrs/week</p>
+        <p>I own outbound, pipeline, and deal cycles inside your team — your CRM, your targets, my rolodex. Month-to-month after a 90-day initial term. Sandler- and Carnegie-trained.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Doors &amp; Partnerships</h3>
+        <p class="model">Commission / success fee</p>
+        <p>Warm introductions from twenty years of executive relationships across finance, government, retail, healthcare, and infrastructure. I've sold to Macy's, JPMC, Mack-Cali, and state municipalities.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Go-to-Market Sprint</h3>
+        <p class="model">Fixed fee · 30–90 days</p>
+        <p>Segmentation, messaging, channel and teaming strategy — finished with a working pipeline handed to your team, not a slide deck.</p>
+      </div>
+    </div>
+  </section>
 
-                <div class="spv-card">
-                    <h3>Rutledge Atelier</h3>
-		    <p>A LTG partnership focussed on creativity throuugh traditional and innovative design. Concierge design now!</p>
-                    <p>Reserved for upcoming creative innovation and imagery in emerging tech sectors. Ready for deployment.</p>  
-		    <a href="https://www.rutledgeatelier.com" target="_blank" class="spv-link">Visit rutledgeatelier.com →</a>
-                </div>
+  <section class="about wrap" id="about">
+    <div>
+      <h2>About James</h2>
+      <p>Founder, sales leader, and individual contributor — I've held all three seats. I've built channel programs with Microsoft, Cisco, ShoreTel, and Avaya, run compliance-driven deals under HIPAA and SOX, and represented business to the United Nations as a PVBLIC Foundation ambassador. I serve on the board of Veterans Without Orders and co-developed an interactive exhibit at the 9/11 Museum in New York.</p>
+      <p style="margin-top:14px">I publish <a href="https://signalfireaim.io">Signal Fire Aim</a> — GTM intelligence on identity governance and AI security for CISOs and CIOs — and the weekly <a href="https://agenticatlarge.substack.com">Agentic At Large</a> brief on Substack.</p>
+    </div>
+    <div class="roles" aria-label="Career timeline">
+      <div class="role"><b>Lucas Taylor Consulting Group — President</b><span>2010 – present</span></div>
+      <div class="role"><b>P3 Global Management — Director of BD</b><span>2014 – 2019</span></div>
+      <div class="role"><b>FileTek — Regional Sales Manager</b><span>2007 – 2010</span></div>
+      <div class="role"><b>Traxi Technologies — Co-founder &amp; SVP Sales</b><span>2003 – 2007</span></div>
+      <div class="role"><b>Veterans Without Orders — Board of Directors</b><span>2018 – present</span></div>
+      <div class="role"><b>Innovator of the Year, Hudson County Chamber</b><span>2017</span></div>
+    </div>
+  </section>
 
-                 <div class="spv-card">
-                    <h3>[Future Governance]</h3>
-		    <p>A LTG orchestra of things paramount to ethical and innovative growth.</p> 
-		</div>
-    </section>
+  <section class="ventures wrap" id="ventures">
+    <h2>LTG ventures</h2>
+    <p class="sub">Operating brands under the Lucas Taylor umbrella.</p>
+    <div class="vgrid">
+      <div class="venture reveal">
+        <h3>Signal Fire Aim</h3>
+        <p>GTM intelligence for the agentic era — identity governance, AI security, and enterprise sales, published under the Agentic At Large brand.</p>
+        <a href="https://signalfireaim.io">signalfireaim.io →</a>
+      </div>
+      <div class="venture reveal">
+        <h3>P3 Palmetto Collaborative</h3>
+        <p>Energetic partnerships and collaborative infrastructure development.</p>
+        <a href="https://www.p3pc.com">p3pc.com →</a>
+      </div>
+      <div class="venture reveal">
+        <h3>Rutledge Atelier</h3>
+        <p>Concierge design through traditional and innovative practice.</p>
+        <a href="https://www.rutledgeatelier.com">rutledgeatelier.com →</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="focus" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>Core Focus Areas</h2>
-                <p>Our strategic pillars for responsible growth.</p>
-            </div>
-            <div class="focus-grid">
-                <div class="focus-item">
-                    <h4>AI :: SaaS Platforms</h4>
-                    <p>Leveraging agentic artificial intelligence to build scalable Software-as-a-Service solutions that define the next generation of productivity.</p>
-                </div>
-                <div class="focus-item">
-                    <h4>Energy & Infrastructure</h4>
-                    <p>Developing sustainable energy solutions and the critical infrastructure required to support a digital-first world.</p>
-                </div>
-                <div class="focus-item">
-                    <h4>Strategic Partnerships</h4>
-                    <p>Forging alliances with industry leaders to accelerate deployment and maximize impact across sectors.</p>
-                </div>
-                <div class="focus-item">
-                    <h4>Governance & Advocacy</h4>
-                    <p>Leading advocates for responsible tech governance, writers on orchestration, and defining ethical frameworks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="slots">Availability: immediate · two client slots open</p>
+      <h2>Need a dealmaker three days a week?</h2>
+      <p>Tell me what you sell and who should be buying it. If I can help, you'll know inside one call.</p>
+      <a class="btn primary" href="mailto:Jmurphy@lucastaylorgroup.com?subject=Fractional%20BD%20inquiry">Jmurphy@lucastaylorgroup.com</a>
+    </div>
+  </section>
+</main>
 
-    <section id="mavens" class="section-padding mavens-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>The <span class="gradient-text">Mavens</span></h2>
-                <p>Responsible leaders we follow: Highlighting The Nobel Prize Winners 2025 for Physics.</p>
-                <p style="margin-top: 10px;"><a href="https://www.nobelprize.org/prizes/physics/2025/summary/" target="_blank">View Nobel Prize in Physics 2025 Information →</a></p>
-            </div>
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;width:100%">
+    <span>© 2012–2026 Lucas Taylor Consulting Group · Oxford, CT</span>
+    <span><a href="https://www.linkedin.com/in/agenticmurphy/" style="text-decoration:none">LinkedIn</a> · 646.408.4385</span>
+  </div>
+</footer>
 
-            <div class="mavens-grid">
-                <div class="maven-card">
-                    <div class="maven-img" style="background-image: url('john-clarke.jpg');"></div>
-                    <h4>John Clarke</h4>
-                    <p>Pioneering work in quantum devices and superconducting electronics.</p>
-                    <p style="margin-top: 10px; font-size: 0.85rem;"><a href="https://scholar.google.com/scholar?q=John+Clarke+physics+publications" target="_blank">Publications & Research →</a></p>
-                </div>
-                <div class="maven-card">
-                    <div class="maven-img" style="background-image: url('michel-devoret.jpg');"></div>
-                    <h4>Michel H. Devoret</h4>
-                    <p>Foundational contributions to superconducting qubits and quantum computing.</p>
-                    <p style="margin-top: 10px; font-size: 0.85rem;"><a href="https://scholar.google.com/scholar?q=Michel+H.+Devoret+physics+publications" target="_blank">Publications & Research →</a></p>
-                </div>
-                <div class="maven-card">
-                    <div class="maven-img" style="background-image: url('john-martinis.jpg');"></div>
-                    <h4>John M. Martinis</h4>
-                    <p>Breakthroughs in building and demonstrating superconducting quantum processors.</p>
-                    <p style="margin-top: 10px; font-size: 0.85rem;"><a href="https://scholar.google.com/scholar?q=John+M.+Martinis+physics+publications" target="_blank">Publications & Research →</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="logo" style="margin-bottom: 20px;">
-                <img src="Web_LOGO_5.png" alt="Lucas Taylor Group Logo Footer">
-            </div>
-            <p>Orchestrating Innovation. Responsible Governanance integration.</p>
-	    <div class="footer-cta" style="margin-top: 30px;">
-            <h3>Stay Informed</h3>
-            <p>Get updates on governance, innovation, and our SPVs.</p>
-            <form action="https://getform.io/f/bgdjxeda" method="POST" class="email-form">
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <button type="submit" class="btn-subscribe">Subscribe</button>
-            </form>
-        </div>
-            <p style="margin-top: 30px; font-size: 0.8rem;">&copy; 2012-2025 LucasTaylor Consulting Group. All rights reserved. <br> P3 Palmetto Collaborative LLC is an operating SPV of LTG.</p>
-        </div>
-    </footer>
-
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
