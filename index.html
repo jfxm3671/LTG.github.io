@@ -248,6 +248,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-family:'Archivo',san
 </div>
 </div>
 <p style="margin-top:28px"><a class="btn primary" href="mailto:Jmurphy@lucastaylorgroup.com?subject=Agent-Security%20GTM%20Sprint%20fit%20call">Book a 20-minute fit call</a></p>
+<p class="fallback">Email not opening? <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Jmurphy@lucastaylorgroup.com&amp;su=Agent-Security%20GTM%20Sprint%20fit%20call" target="_blank" rel="noopener">Compose in Gmail</a> or <button type="button" class="copy-email">copy Jmurphy@lucastaylorgroup.com</button></p>
 </section>
 <section class="flex wrap" id="flex">
 <h2>Built to flex</h2>
@@ -303,6 +304,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-family:'Archivo',san
 </div>
 </div>
 <p style="margin-top:18px"><a class="btn ghost" href="mailto:Jmurphy@lucastaylorgroup.com?subject=Speaking%20or%20podcast%20request">Book James to speak</a></p>
+<p class="fallback">Email not opening? <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Jmurphy@lucastaylorgroup.com&amp;su=Speaking%20or%20podcast%20request" target="_blank" rel="noopener">Compose in Gmail</a> or <button type="button" class="copy-email">copy Jmurphy@lucastaylorgroup.com</button></p>
 </section>
 <section class="ventures wrap" id="ventures">
 <h2>LTG ventures</h2>
@@ -343,7 +345,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-family:'Archivo',san
 <script>
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-document.getElementById('copyEmail').addEventListener('click', function(){ var b=this, t=b.textContent; (navigator.clipboard?navigator.clipboard.writeText('Jmurphy@lucastaylorgroup.com'):Promise.reject()).then(function(){ b.textContent='copied'; setTimeout(function(){b.textContent=t},1800); }).catch(function(){ window.prompt('Copy this address:','Jmurphy@lucastaylorgroup.com'); }); });
+document.querySelectorAll('#copyEmail, .copy-email').forEach(function(el){ el.addEventListener('click', function(){ var b=this, t=b.textContent; (navigator.clipboard?navigator.clipboard.writeText('Jmurphy@lucastaylorgroup.com'):Promise.reject()).then(function(){ b.textContent='copied'; setTimeout(function(){b.textContent=t},1800); }).catch(function(){ window.prompt('Copy this address:','Jmurphy@lucastaylorgroup.com'); }); }); });
 </script>
 <script>
   // Latest signal: driven by latest.json (updated by the approved daily publish).
